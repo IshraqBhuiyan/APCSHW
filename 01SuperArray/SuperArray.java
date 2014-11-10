@@ -45,7 +45,7 @@ public class SuperArray{
 
     public void add(int index, Object O){
 	while(lenArr> superArr.length || index > superArr.length -1){
-	    resize(superArr.length *2);
+	    resize((superArr.length+1) *2);
 	}
         if(index < lenArr){
 	    for(int i = lenArr; i > index; i--){
@@ -55,6 +55,40 @@ public class SuperArray{
 	superArr[index] = O;
     }
 
-    
+    public Object set(int index, Object O){
+	if(index > superArr.length || index < 0){
+	    throw new IndexOutOfBoundsException();
+	}
+	Object old = null;
+	old = superArr[index];
+	superArr[index] = O;
+	return old;
+
+    }
+
+    public Object get(int index){
+	if(index > superArr.length || index < 0){
+	    throw new IndexOutOfBoundsException();
+	}
+	return superArr[index];
+    }
+
+    public void clear(){
+	superArr = new Object(lenArr * 2);
+	lenArr = 0;
+    }
+
+    public void remove(int index){
+	if(index > superArr.length || index < 0){
+	    throw new IndexOutOfBoundsException();
+	}
+	for(int i = index; i < lenArr - 1; i++){
+	    superArr[i] = superArr[i+1];
+	}
+	lenArr--;
+	if(lenArr < (superArr.length / 2)){
+	    resize(superArr.length - 1);
+	}
+    }
 
 }
