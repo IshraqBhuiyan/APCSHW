@@ -24,21 +24,35 @@ public class SuperArray{
 	}
 	superArr = newArr;
     }
+
+    public int size(){
+	return lenArr;
+    }
     
     public void add(Object O){
-	if(lenArr - 1 < superArr.length){
+      	/*if(lenArr < superArr.length){
 	    superArr[lenArr] = O;
 	    lenArr++;
 	}
 	else{
-	    resize(superArr.length + 1);
+	    resize(superArr.length * 2);
 	    superArr[lenArr] = O;
 	    lenArr++;
 	}
+	*/
+	add(lenArr, O);
     }
 
     public void add(int index, Object O){
-
+	while(lenArr> superArr.length || index > superArr.length -1){
+	    resize(superArr.length *2);
+	}
+        if(index < lenArr){
+	    for(int i = lenArr; i > index; i--){
+		superArr[i] = superArr[i - 1];
+	    }
+	}
+	superArr[index] = O;
     }
 
     
