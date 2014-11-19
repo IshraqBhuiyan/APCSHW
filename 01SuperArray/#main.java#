@@ -3,7 +3,9 @@ public class main{
 	SuperArray test = new SuperArray();
 	System.out.println(test);
 	for(int i = 0; i<1000; i++){
-	    test.add(4);
+	    Integer potato = new Integer(42);
+	    test.add(potato);
 	}
+	System.out.println(test.get(567));
     }
 }

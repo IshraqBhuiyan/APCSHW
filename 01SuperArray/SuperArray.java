@@ -1,24 +1,24 @@
 public class SuperArray{
-    private Object[] superArr = null;
-    private int lenArr = null;
+    private Object[] superArr;
+    private int lenArr;
 
     public SuperArray(){
 	this(10);
     }
     public SuperArray(int len){
-	superArr = new Object(len);
+	superArr = new Object[len];
     }
 
     public String toString(){
-	String arr = "[]";
+	String str = "[]";
 	for(int i = 0; i<superArr.length; i++){
-	    arr[i+1] = " " + superArr[i];
+	    str[i+1] = " " + superArr[i];
 	}
 	return arr;
     }
 
     public void resize(int Capacity){
-	Object[] newArr = new Object(Capacity);
+	Object[] newArr = new Object[Capacity];
 	for (int i = 0; i<superArr.length; i++){
 	    newArr[i] = superArr[i];
 	}
