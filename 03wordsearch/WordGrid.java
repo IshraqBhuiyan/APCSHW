@@ -47,7 +47,18 @@ public class WordGrid{
      *or there are overlapping letters that do not match, then false is returned.
      */
     public boolean addWordHorizontal(String word,int row, int col){
-	
+	if(word.length() < data[row].length - col){
+	    return false;
+	}
+	for(int i = col; i < word.length() + col; i++){
+	    if(data[row][i] != ' ' && data[row][i] != word.charAt(i - col)){
+		return false;
+	    }
+	}
+	for(int i = col; i< word.length() + col; i++){
+	    data[row][i] = word.charAt(i - col);
+	}
+	return true;
     }
 
     //vertical + diagonal should be implemented as well.
