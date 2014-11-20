@@ -1,3 +1,3 @@
-The Cake is a Lie\n
-But Mr K's APCS Class is not.....\n
-(Someone bake me cake!)\n
+The Cake is a Lie
+But Mr K's APCS Class is not.....
+(Someone bake me cake!)
