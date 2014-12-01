@@ -10,11 +10,12 @@ public class SuperArray{
     }
 
     public String toString(){
-	String str = "[]";
-	for(int i = 0; i<superArr.length; i++){
-	    str[i+1] = " " + superArr[i];
+	String str = "[";
+	for(int i = 0; i<size(); i++){
+	    str += " " + superArr[i];
 	}
-	return arr;
+	str+= "]";
+	return str;
     }
 
     public void resize(int Capacity){
@@ -53,6 +54,7 @@ public class SuperArray{
 	    }
 	}
 	superArr[index] = O;
+	lenArr++;
     }
 
     public Object set(int index, Object O){
@@ -74,7 +76,7 @@ public class SuperArray{
     }
 
     public void clear(){
-	superArr = new Object(lenArr * 2);
+	superArr = new Object[lenArr * 2];
 	lenArr = 0;
     }
 

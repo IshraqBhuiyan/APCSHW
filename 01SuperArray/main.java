@@ -3,7 +3,8 @@ public class main{
 	SuperArray test = new SuperArray();
 	System.out.println(test);
 	for(int i = 0; i<1000; i++){
-	    test.add(4);
+	    test.add(i);
 	}
+	System.out.println(test);
     }
 }
