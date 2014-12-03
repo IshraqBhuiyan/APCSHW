@@ -60,6 +60,19 @@ public class WordGrid{
 	}
 	return true;
     }
+
+    public void addManyWordsToList(ArrayList<String> words){
+	for(int i=0;i<words.size();i++){
+	    int z=0;
+	    while(z<5){
+		if(addWord(words.get(i),rand.nextInt(wordsearch.length), rand.nextInt(wordsearch[0].length), rand.nextInt(3) + -1, rand.nextInt(3) + -1)){
+		    wordList.add(words.get(i));
+		    break;
+		}
+		z++;
+	    }
+	}
+    }
     
     public boolean addWordHorizontal(String word,int row, int col){
 	if(word.length() > wordsearch[row].length - col){
