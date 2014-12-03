@@ -67,7 +67,7 @@ public class WordGrid{
     public String toString(){
 	String puzzle = "";
 	for(int i = 0; i<wordsearch.length;i++){
-	    for(int z = 0; z<wordsearch[i].length;i++){
+	    for(int z = 0; z<wordsearch[i].length;z++){
 		puzzle += wordsearch[i][z];
 	    }
 	    puzzle += "\n";
