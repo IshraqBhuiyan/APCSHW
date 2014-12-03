@@ -1,12 +1,12 @@
 public class SuperArray{
-    private Object[] superArr;
+    private String[] superArr;
     private int lenArr;
 
     public SuperArray(){
 	this(10);
     }
     public SuperArray(int len){
-	superArr = new Object[len];
+	superArr = new String[len];
     }
 
     public String toString(){
@@ -19,7 +19,7 @@ public class SuperArray{
     }
 
     public void resize(int Capacity){
-	Object[] newArr = new Object[Capacity];
+	String[] newArr = new String[Capacity];
 	for (int i = 0; i<superArr.length; i++){
 	    newArr[i] = superArr[i];
 	}
@@ -30,7 +30,7 @@ public class SuperArray{
 	return lenArr;
     }
 
-    public void add(Object O){
+    public void add(String O){
       	/*if(lenArr < superArr.length){
 	    superArr[lenArr] = O;
 	    lenArr++;
@@ -44,7 +44,7 @@ public class SuperArray{
 	add(lenArr, O);
     }
 
-    public void add(int index, Object O){
+    public void add(int index, String O){
 	while(lenArr> superArr.length || index > superArr.length -1){
 	    resize((superArr.length+1) *2);
 	}
@@ -57,18 +57,18 @@ public class SuperArray{
 	lenArr++;
     }
 
-    public Object set(int index, Object O){
+    public String set(int index, String O){
 	if(index > superArr.length || index < 0){
 	    throw new IndexOutOfBoundsException();
 	}
-	Object old = null;
+	String old = null;
 	old = superArr[index];
 	superArr[index] = O;
 	return old;
 
     }
 
-    public Object get(int index){
+    public String get(int index){
 	if(index > superArr.length || index < 0){
 	    throw new IndexOutOfBoundsException();
 	}
@@ -76,7 +76,7 @@ public class SuperArray{
     }
 
     public void clear(){
-	superArr = new Object[lenArr * 2];
+	superArr = new String[lenArr * 2];
 	lenArr = 0;
     }
 
