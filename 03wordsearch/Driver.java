@@ -27,7 +27,7 @@ public class Driver{
 	    }
 	    WordGrid w = new WordGrid(rows, cols, seed, filling);
 	}
-	w.loadWordsFromFile("words.txt", );
+	w.loadWordsFromFile("words.txt");
 	System.out.println("Find these words:\n" + w.wordsInPuzzle());
 	System.out.println(w);
     }
