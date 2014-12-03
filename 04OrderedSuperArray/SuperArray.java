@@ -12,7 +12,7 @@ public class SuperArray{
     public String toString(){
 	String str = "[";
 	for(int i = 0; i<size(); i++){
-	    str += " " + superArr[i];
+           str += " " + superArr[i];
 	}
 	str+= "]";
 	return str;
@@ -29,7 +29,7 @@ public class SuperArray{
     public int size(){
 	return lenArr;
     }
-    
+
     public void add(Object O){
       	/*if(lenArr < superArr.length){
 	    superArr[lenArr] = O;
@@ -90,6 +90,19 @@ public class SuperArray{
 	lenArr--;
 	if(lenArr < (superArr.length / 2)){
 	    resize(superArr.length - 1);
+	}
+    }
+
+    public void insertionSort(){
+	for(int i = 1; i<size(); i++){
+	    if(get(i).compareTo(get(i-1)) < 0){
+		int z = 0;
+		while(get(z).compareTo(get(i)) < 0){
+		    z++;
+		}
+		add(z, get(i));
+		remove(i+1);
+	    }
 	}
     }
 
