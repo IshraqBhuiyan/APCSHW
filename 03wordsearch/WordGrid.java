@@ -33,7 +33,7 @@ public class WordGrid{
 	}
     }
 
-    public void loadWordsFromFile(String filename, boolean fillRand){
+    public void loadWordsFromFile(String filename){
 	ArrayList<String> ListOfWords = new ArrayList<String>();
 	File text = new File(filename);
 	Scanner words = new Scanner(text);
@@ -41,7 +41,7 @@ public class WordGrid{
 	    ListOfWords.add(words.nextLine());
 	}
 	addManyWordsToList(ListOfWords);
-	if(fillRand){
+	if(fillRandom){
 	    fill();
 	}
     }
