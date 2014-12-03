@@ -9,14 +9,12 @@ public class Driver{
 	}
 	}*/
     public static void main(String[]args){
-	ArrayList<String> wordList = new ArrayList<String>();
-	String filename = "words.txt";
-	//openFile(filename, wordList);
-	WordGrid test = new WordGrid(10, 10);
-	Random rng = new Random();
-	test.addWordHorizontal("bacon", 0, 0);
-	System.out.println(test);
-	
+	// parsing args
+	WordGrid w = new WordGrid( );
+	//if random see --> Set Random seed
+	w.loadWordsFromFile("words.txt", );
+	System.out.println("Find these words:\n" + w.wordsInPuzzle());
+	System.out.println(w);
     }
 
 }
