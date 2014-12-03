@@ -4,11 +4,14 @@ public class WordGrid{
     private char[][]wordsearch;
     private Random rand;
     private ArrayList<String> wordList;
+    private boolean fillRandom;
 
-    public WordGrid(int rows,int cols){
+    public WordGrid(int rows,int cols, int seed, boolean fillRandomly){
 	wordsearch = new char[rows][cols];
 	rand = new Random();
 	wordList = new ArrayList<String>();
+	setSeed(seed);
+	fillRandom = fillRandomly;
 	clear();
     }
 
@@ -43,8 +46,10 @@ public class WordGrid{
 	}
     }
 
-    public void setSeed(long seed){
-	rand.setSeed(seed);
+    public void setSeed(int seed){
+	if(seed != 0){
+	    rand.setSeed(seed);
+	}
     }
 
     public String wordsInPuzzle(){
