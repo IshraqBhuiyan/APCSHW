@@ -2,11 +2,13 @@ import java.util.*;
 import java.io.*;
 public class WordGrid{
     private char[][]wordsearch;
-    private Random rand = new Random();
+    private Random rand;
     private ArrayList<String> wordList;
 
     public WordGrid(int rows,int cols){
 	wordsearch = new char[rows][cols];
+	rand = new Random();
+	wordList = new ArrayList<String>();
 	clear();
     }
 
