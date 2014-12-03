@@ -78,9 +78,9 @@ public class WordGrid{
 
     public boolean addWord(String word, int row, int col, int dx, int dy){
 	if((dx > 1 || dx < -1 || dy > 1 || dy < -1) || (dx==0 && dy==0)||
-	   (dx=1 && word.length()>wordsearch[row].length - col) ||
-	   (dx=-1 && word.length()>col+1) || (dy=1 && word.length()>wordsearch.length - row) ||
-	   (dy=-1 && word.length()>row+1)){
+	   (dx==1 && word.length()>wordsearch[row].length - col) ||
+	   (dx==-1 && word.length()>col+1) || (dy==1 && word.length()>wordsearch.length - row) ||
+	   (dy==-1 && word.length()>row+1)){
 	    return false;
 	}
 	for(int i=0;i<word.length();i++){
