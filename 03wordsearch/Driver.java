@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 public class Driver{
-    public static void main(String[]args){
+    public static void main(String[]args)throws FileNotFoundException{
 	// parsing args
 	WordGrid w;
 	if(args.length == 0){

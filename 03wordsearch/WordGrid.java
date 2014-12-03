@@ -36,8 +36,8 @@ public class WordGrid{
     public void loadWordsFromFile(String filename){
 	ArrayList<String> ListOfWords = new ArrayList<String>();
 	File text = new File(filename);
-	Scanner words = new Scanner(text);
-	while(words.hasNextLine()){
+	Scanner scans = new Scanner(text);
+	while(scans.hasNextLine()){
 	    ListOfWords.add(words.nextLine());
 	}
 	addManyWordsToList(ListOfWords);
