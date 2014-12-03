@@ -33,12 +33,12 @@ public class WordGrid{
 	}
     }
 
-    public void loadWordsFromFile(String filename){
+    public void loadWordsFromFile(String filename) throws FileNotFoundException{
 	ArrayList<String> ListOfWords = new ArrayList<String>();
 	File text = new File(filename);
 	Scanner scans = new Scanner(text);
 	while(scans.hasNextLine()){
-	    ListOfWords.add(words.nextLine());
+	    ListOfWords.add(scans.nextLine());
 	}
 	addManyWordsToList(ListOfWords);
 	if(fillRandom){
