@@ -107,53 +107,6 @@ public class WordGrid{
 	}
     }
     
-    public boolean addWordHorizontal(String word,int row, int col){
-	if(word.length() > wordsearch[row].length - col){
-	    return false;
-	}
-	for(int i = col; i < word.length() + col; i++){
-	    if(wordsearch[row][i] != ' ' && wordsearch[row][i] != word.charAt(i - col)){
-		return false;
-	    }
-	}
-	for(int i = col; i< word.length() + col; i++){
-	    wordsearch[row][i] = word.charAt(i - col);
-	}
-	return true;
-    }
-
-
-    public boolean addWordVertical(String word, int row, int col){
-	if(word.length() > wordsearch.length - row){
-	    return false;
-	}
-	for(int i = row; i < word.length(); i++){
-	    if(wordsearch[i][col] != ' ' && wordsearch[i][col] != word.charAt(i - row)){
-		return false;
-	    }
-	}
-	for(int i = row; i < word.length(); i++){
-	    wordsearch[i][col] = word.charAt(i - row);
-	}
-	return true;
-    }
-
-
-    public boolean addWordDiagnol(String word, int row, int col){
-	if(word.length() > wordsearch.length - row || word.length() > wordsearch[row].length - col){
-	    return false;
-	}
-	for(int i = 0; i<word.length(); i++){
-	    if(wordsearch[row + i][col+i] != ' ' && wordsearch[row+i][col+i] != word.charAt(i)){
-		return false;
-	    }
-	}
-	for(int i=0;i<word.length();i++){
-	    wordsearch[row+i][col+i] = word.charAt(i);
-	}
-	return true;
-    }
-
 
 }
 
