@@ -2,7 +2,7 @@ import java.util.*;
 import java.io.*;
 public class WordGrid{
     private char[][]wordsearch;
-    private Random rand;
+    private Random rand = new Random();
     private ArrayList<String> wordList;
 
     public WordGrid(int rows,int cols){
@@ -29,8 +29,34 @@ public class WordGrid{
     }
 
     public void loadWordsFromFile(String filename, boolean fillRand){
-
+	ArrayList<String> ListOfWords = new ArrayList<String>();
+	File text = new File(filename);
+	Scanner words = new Scanner(text);
+	while(words.hasNextLine()){
+	    ListOfWords.add(words.nextLine());
+	}
+	addManyWordsToList(ListOfWords);
+	if(fillRand){
+	    fill();
+	}
     }
+
+    public void setSeed(long seed){
+	rand.setSeed(seed);
+    }
+
+    public String wordsInPuzzle(){
+	String findWords = new String();
+	for(int i=0; i<wordList.size();i++){
+	    if(i%4 == 0){
+		findWords += "\n";
+	    }
+	    findWords += wordList.get(i);
+	    findWords += "       ";
+	}
+	return findWords;
+    }
+    
     public String toString(){
 	String puzzle = "";
 	for(int i = 0; i<wordsearch.length;i++){
