@@ -93,7 +93,11 @@ public class SuperArray{
 	}
     }
 
-    public void insertionSort(){
+    public void find(String target){
+	
+    }
+
+    public void insertionFailSort(){
 	for(int i = 1; i<size(); i++){
 	    if(get(i).compareTo(get(i-1)) < 0){
 		int z = 0;
@@ -106,4 +110,32 @@ public class SuperArray{
 	}
     }
 
+    public void insertionSort(){
+	for(int i=0;i<this.size();i++){
+	    String tempw = get(i);
+	    int temp;
+	}
+    }
+
+    public void selectionSort(){
+	for(int i=0;i<size();i++){
+	    int least = i;
+	    for(int z=i;z<size();z++){
+		if(get(least).compareTo(get(z)) > 0) least = z;
+	    }
+	    String leastw = get(least);
+	    set(least, get(i));
+	    set(i, leastw);
+	}
+    }
+	
+    public void badInsertionSort(){
+	OrderedSuperArray c = new OrderedSuperArray();
+	while( this.size() > 0){
+	    c.add(this.remove(0));
+	}
+	while(c.size() > 0){
+	    this.add(c.remove(0));
+	}
+    }
 }

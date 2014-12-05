@@ -5,8 +5,10 @@ public class main{
 	SuperArray test = new SuperArray();
 	System.out.println(test);
 	for(int i = 0; i<1000; i++){
-	    test.add(r.nextInt(1000)+i);
+	    test.add(""+(r.nextInt(1000)+i));
 	}
-	System.out.println(test);
+	System.out.println("array of random Strings\n\n" + test + "\n\n");
+	test.insertionFailSort();
+	System.out.println("Testing insertionFailedSort()\n\n" + test+"\n\n");
     }
 }
