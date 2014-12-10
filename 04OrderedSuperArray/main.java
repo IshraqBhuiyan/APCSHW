@@ -3,8 +3,8 @@ public class main{
     public static void main(String[] args){
 	//Random r = new Random();
 	SuperArray test = new SuperArray();
-	System.out.println(test);
-	for(int i = 0; i<500000; i++){
+	//System.out.println(test);
+	for(int i = 0; i<100; i++){
 	    test.add(""+i);
 	}
 	System.out.println("array of random Strings\n\n" + test + "\n\n");
@@ -19,7 +19,7 @@ public class main{
 
 	    }else System.out.println("invalid request for sort");
 	}
-	test.insertionSort();
+	//test.insertionSort();
 	System.out.println(test);
     }
 }
