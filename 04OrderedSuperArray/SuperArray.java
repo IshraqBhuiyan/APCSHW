@@ -81,7 +81,7 @@ public class SuperArray{
     }
 
     public void remove(int index){
-	if(index > superArr.length || index < 0){
+	if(index > size() || index < 0){
 	    throw new IndexOutOfBoundsException();
 	}
 	for(int i = index; i < lenArr - 1; i++){
@@ -93,8 +93,12 @@ public class SuperArray{
 	}
     }
 
-    public void find(String target){
-	
+    public int find(String target){
+	for(int i=0;i<size();i++){
+	    if(get(i).equals(target)){
+		return i;
+	    }
+	}
     }
 
     public void insertionFailSort(){
@@ -110,10 +114,25 @@ public class SuperArray{
 	}
     }
 
+    public void push(int start, int end){
+	if(!(start>=end)){
+	    for(int i=end;i>start;i--){
+		set(i, get(i-1));
+	    }
+	}
+    }
+
     public void insertionSort(){
-	for(int i=0;i<this.size();i++){
-	    String tempw = get(i);
-	    int temp;
+	for(int i=0;i<size();i++){
+	    String temp = get(i);
+	    int pos = 0;
+	    for(int z=0;z<i;z++){
+		if(get(z).compareTo(temp)<0){
+		    pos = z;
+		}
+	    }
+	    push(z, i);
+	    set(z, temp);
 	}
     }
 

@@ -1,5 +1,5 @@
 public class OrderedSuperArray extends SuperArray{
-
+    
     public OrderedSuperArray(){
 	this(10);
     }
@@ -8,11 +8,11 @@ public class OrderedSuperArray extends SuperArray{
 	super(len);
     }
 
-    public boolean add(int index, Object O){
-	add(Object O);
+    public boolean add(int index, String O){
+	add(String O);
     }
 
-    public boolean add(Object O){
+    public boolean add(String O){
 	int place = 0;
 	while(super.get(place).compareTo(O) < 0){
 	    place++;
@@ -20,12 +20,22 @@ public class OrderedSuperArray extends SuperArray{
 	super.add(place,O);
     }
 
-    public Object set(int index, Object O){
-	set(Object O);
+    public String set(int index, String O){
+	add(O);
+	return remove(O);
     }
 
-    public Object set(Object O){
-
+    public int find(String target){
+	int split = 2;
+	int index = size()/split;
+	while(target.compareTo(get(index))>0){
+	    split = split*2;
+	    index += size/split;
+	}
+	for(;index>0 && get(index).compareTo(target) >= target; index--);
+	return index;
+	
     }
+	
 
 }
