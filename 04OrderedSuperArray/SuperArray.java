@@ -116,26 +116,25 @@ public class SuperArray{
 	    }
 	}
     }
-
+/*
     public void push(int start, int end){
-	if(!(start>=end)){
+	if(!(start<end)){
 	    for(int i=end;i>start;i--){
 		set(i, get(i-1));
 	    }
 	}
     }
-
+*/
     public void insertionSort(){
-	for(int i=0;i<size();i++){
-	    String temp = get(i);
-	    int pos=0;
-	    for(int z=0;z<size();z++){
-		if(get(z).compareTo(temp)<0){
-		    pos = z;
-		}
+        for(int i=1; i<size(); i++){
+	    String j = get(i);
+	    int z = i-1;
+	    while(z>0 && get(z).compareTo(j) > 0){
+		set(z+1, get(z));
+		z--;
 	    }
-	    push(pos, i);
-	    set(pos, temp);
+	    set(z+1, j);
+
 	}
     }
 
