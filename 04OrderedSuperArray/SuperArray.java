@@ -129,7 +129,7 @@ public class SuperArray{
         for(int i=1; i<size(); i++){
 	    String j = get(i);
 	    int z = i-1;
-	    while(z>0 && get(z).compareTo(j) > 0){
+	    while(z>=0 && get(z).compareTo(j) > 0){
 		set(z+1, get(z));
 		z--;
 	    }
